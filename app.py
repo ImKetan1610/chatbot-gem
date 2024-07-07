@@ -8,7 +8,6 @@ model = genai.GenerativeModel('gemini-pro')
 load_dotenv();
 my_api_key_gemini = os.getenv('MY_KEY')
 
-# my_api_key_gemini = "AIzaSyDjGwWxe8asJWt_Ml_MwTzZwZBddNfNyFY"
 
 genai.configure(api_key=my_api_key_gemini)
 
