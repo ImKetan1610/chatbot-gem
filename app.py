@@ -8,6 +8,7 @@ model = genai.GenerativeModel('gemini-pro')
 load_dotenv();
 my_api_key_gemini = os.getenv('MY_KEY')
 
+# my_api_key_gemini = "AIzaSyDjGwWxe8asJWt_Ml_MwTzZwZBddNfNyFY"
 
 genai.configure(api_key=my_api_key_gemini)
 
@@ -23,7 +24,7 @@ def index():
     if request.method == 'POST':
         try:
             prompt = request.form['prompt']
-            question = "Please consider yourself as a learner and you need to ask your doubts to the user and then at the end please analyse this chat on the basis of grammer, tone of the agent should be professional, summarize the chat and comments what staps agent should take to increase the user experience. Also agen should guide the user to solution. Rate teh agent on the basis of each factor on scale of 10"
+            question = "Please consider yourself as a learner and you need to ask your doubts to the user and then at the end please analyse this chat on the basis of grammer, tone of the agent should be professional, summarize the chat and comments what staps agent should take to increase the user experience. Also agent should guide the user to solution. Rate teh agent on the basis of each factor on scale of 10. please gave response in the form of JSON object having keys for rating in grammer, rating for tone, rating for agent's approach also add some comments in comments key"
 
             response = model.generate_content(question)
 
